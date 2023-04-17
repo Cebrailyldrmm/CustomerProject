@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using CustomerFinderBusiness.Abstract;
+using CustomerFinderBusiness.Concrete;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -17,6 +19,7 @@ namespace WebApplication3
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            services.AddScoped<ICustomerService,CustomerManager>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

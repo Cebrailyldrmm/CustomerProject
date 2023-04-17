@@ -11,9 +11,9 @@ namespace CustomerWebAPI.Controllers
     public class CustomerController : ControllerBase
     {
         private ICustomerService _customservice;
-        public CustomerController()
+        public CustomerController(ICustomerService customerService)
         {
-            _customservice = new CustomerManager();
+            _customservice =customerService;
         }
 
         [HttpGet]
